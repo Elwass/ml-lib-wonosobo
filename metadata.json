@@ -1,0 +1,6 @@
+{
+  "name": "TaniPintar Blederan - Rekomendasi Tanam & Mitigasi Wonosobo",
+  "description": "Sistem rekomendasi waktu tanam BMKG, pemantauan produktivitas lahan real-time, prediksi gagal panen, integrasi harga pasar, dan peringatan cuaca ekstrem WA untuk Desa Blederan, Mojotengah, Wonosobo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
