@@ -1,9 +1,4 @@
-# 📋 Panduan Serah Terima (Handover Guide) Model Machine Learning
-**Proyek:** TaniPintar Desa Blederan, Kec. Mojotengah, Kab. Wonosobo  
-**Role:** Machine Learning Engineer / Data Scientist  
-**Ditujukan ke:** Backend Developer & Web Developer / Frontend  
 
----
 
 ## 1. Berkas yang Telah Disiapkan di Repositori (`/ml_pipeline/`)
 
