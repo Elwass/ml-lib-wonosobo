@@ -69,7 +69,7 @@ def generate_synthetic_historical_dataset():
     return df
 
 def train_and_export_models():
-    print("🚀 [1/3] Menyiapkan dataset fitur agroklimat Wonosobo...")
+    print("[1/3] Menyiapkan dataset fitur agroklimat Wonosobo...")
     df = generate_synthetic_historical_dataset()
 
     feature_cols = [
@@ -85,12 +85,12 @@ def train_and_export_models():
         X, y_risk, y_price, test_size=0.2, random_state=42
     )
 
-    print("🤖 [2/3] Melatih Model 1 (Classifier Risiko Gagal Panen)...")
+    print("[2/3] Melatih Model 1 (Classifier Risiko Gagal Panen)...")
     clf_risk = RandomForestClassifier(n_estimators=100, max_depth=8, random_state=42)
     clf_risk.fit(X_train, y_risk_train)
     y_pred_risk = clf_risk.predict(X_test)
     acc = accuracy_score(y_risk_test, y_pred_risk)
-    print(f"   ✅ Akurasi Model Risiko: {acc * 100:.2f}%")
+    print(f"Akurasi Model Risiko: {acc * 100:.2f}%")
 
     print("📈 [2/3] Melatih Model 2 (Regressor Prediksi Harga Panen)...")
     reg_price = RandomForestRegressor(n_estimators=100, max_depth=10, random_state=42)
@@ -98,7 +98,7 @@ def train_and_export_models():
     y_pred_price = reg_price.predict(X_test)
     r2 = r2_score(y_price_test, y_pred_price)
     mae = mean_absolute_error(y_price_test, y_pred_price)
-    print(f"   ✅ R² Model Harga: {r2:.3f} | MAE: Rp {mae:,.0f}/kg")
+    print(f"R² Model Harga: {r2:.3f} | MAE: Rp {mae:,.0f}/kg")
 
     # Export serialized artifacts
     output_dir = os.path.dirname(os.path.abspath(__file__))
@@ -108,7 +108,7 @@ def train_and_export_models():
     joblib.dump(clf_risk, risk_model_path)
     joblib.dump(reg_price, price_model_path)
 
-    print(f"📦 [3/3] Model berhasil diekspor:")
+    print(f"[3/3] Model berhasil diekspor:")
     print(f"   - {risk_model_path}")
     print(f"   - {price_model_path}")
     print("Siap diserahterimakan ke tim Backend!")
